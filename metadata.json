@@ -1,0 +1,6 @@
+{
+  "name": "CiberNOVA-PAT — NEXO Misioa (LH 1)",
+  "description": "Zibersegurtasuna eta Ongizate Digitala lantzeko aplikazio interaktiboa Lehen Hezkuntzako 1. mailarako, euskaraz eta esperientzia pertsonalizagarriarekin.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,126 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Outfit', system-ui, sans-serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  .font-lexend {
+    --font-display: 'Lexend', system-ui, sans-serif;
+    --font-body: 'Lexend', system-ui, sans-serif;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+
+  button, a, [role="button"] {
+    touch-action: manipulation;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid #0284c7;
+  outline-offset: 2px;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tactile 3D button style restrained for clean hierarchy */
+.btn-tactile {
+  border-bottom-width: 3px;
+  transition: transform 0.14s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.14s ease, border-color 0.14s ease;
+}
+.btn-tactile:active:not(:disabled) {
+  transform: translateY(2px);
+  border-bottom-width: 1px;
+}
+
+/* Warm calm surface preset */
+.theme-warm {
+  background-color: #faf7f2;
+  color: #1c1917;
+}
+
+/* High contrast accessibility preset */
+.theme-contrast {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.theme-contrast header,
+.theme-contrast section,
+.theme-contrast article,
+.theme-contrast aside > div,
+.theme-contrast .surface-card {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+.theme-contrast input,
+.theme-contrast label,
+.theme-contrast .contrast-box {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+.theme-contrast p,
+.theme-contrast span:not(.contrast-keep-color) {
+  color: inherit;
+}
+.theme-contrast button.btn-primary-contrast {
+  background-color: #000000 !important;
+  color: #fde047 !important;
+  border-color: #000000 !important;
+}
+.theme-contrast .contrast-ring-track {
+  stroke: #d4d4d8 !important;
+}
+.theme-contrast .contrast-ring-fill {
+  stroke: #000000 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.calm-motion *, .calm-motion *::before, .calm-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+}
+
+@media print {
+  header, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .print-card {
+    border: 4px solid #0284c7 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+  }
+}
